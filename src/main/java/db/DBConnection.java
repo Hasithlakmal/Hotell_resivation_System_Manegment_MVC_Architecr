@@ -11,7 +11,7 @@ public class DBConnection {
 
     private DBConnection() throws SQLException {
 
-        connection = DriverManager.getConnection("// insert your sql path and user name and password");
+        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_reservation","root","1234");
 
 
     }

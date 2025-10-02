@@ -60,7 +60,7 @@ public class CustomerManagementFormController implements Initializable {
     @FXML
     private JFXTextField txtPhoneNumber;
 
-    CustomerManagementControllerServers customerManagementController = new CustomerManagementController();
+    CustomerManagementControllerServers customerManagementControllerServers = new CustomerManagementController();
 
     public boolean isname() {
 
@@ -92,7 +92,7 @@ public class CustomerManagementFormController implements Initializable {
 
                     );
 
-                    int i = customerManagementController.addCustormerDetails(getcustormerDetails);
+                    int i = customerManagementControllerServers.addCustormerDetails(getcustormerDetails);
 
                     if (i > 0) {
 
@@ -126,7 +126,7 @@ public class CustomerManagementFormController implements Initializable {
 
                     );
 
-                    int i = customerManagementController.addCustormerDetails(getcustormerDetails);
+                    int i = customerManagementControllerServers.addCustormerDetails(getcustormerDetails);
 
                     if (i > 0) {
 
@@ -171,7 +171,7 @@ public class CustomerManagementFormController implements Initializable {
     void btnDeleteOnAction(ActionEvent event) {
 
 
-        int i = customerManagementController.deleteCustormerDetails(txtPhoneNumber.getText(), txtName.getText(), txtEmail.getText());
+        int i = customerManagementControllerServers.deleteCustormerDetails(txtPhoneNumber.getText(), txtName.getText(), txtEmail.getText());
 
 
         if (i > 0) {
@@ -196,7 +196,7 @@ public class CustomerManagementFormController implements Initializable {
 
         );
 
-        int i = customerManagementController.updateCustormerDetails(getcustormerDetails);
+        int i = customerManagementControllerServers.updateCustormerDetails(getcustormerDetails);
         if (i > 0) {
 
 
@@ -221,7 +221,7 @@ public class CustomerManagementFormController implements Initializable {
     public void LoadCustormerToTable() {
 
 
-        ObservableList<CustormerDetails> custormerDetails = customerManagementController.setViweDetails();
+        ObservableList<CustormerDetails> custormerDetails = customerManagementControllerServers.setViweDetails();
         colCustomerName.setCellValueFactory(new PropertyValueFactory<>("name"));
         colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
         colPhone.setCellValueFactory(new PropertyValueFactory<>("phone"));
